@@ -1,0 +1,19 @@
+{
+    "azureFunctions.deploySubpath": "api",
+    "azureFunctions.postDeployTask": "npm install (functions)",
+    "azureFunctions.projectLanguage": "JavaScript",
+    "azureFunctions.projectRuntime": "~3",
+    "debug.internalConsoleOptions": "neverOpen",
+    "azureFunctions.projectSubpath": "src/api",
+    "azureFunctions.preDeployTask": "npm prune (functions)",
+    "cSpell.words": [
+        "Backbutton",
+        "builddeploy"
+    ],
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true
+    },
+    "eslint.validate": [
+        "javascript"
+    ]
+}

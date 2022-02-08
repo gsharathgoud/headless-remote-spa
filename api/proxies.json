@@ -1,0 +1,97 @@
+{
+  "proxies": {
+    "aem": {
+      "matchCondition": {
+        "route": "/.model.json"
+      },
+      "backendUri": "http://%AEM_SDK%/content/aem-demo/us/en/home.model.json",
+      "requestOverrides": {
+        "backend.request.headers.Authorization": "%AUTH_TOKEN%"
+      }
+    },
+    "routes": {
+      "matchCondition": {
+        "route": "/adventure:/content/aem-demo/us/en/home/adventure/bali-surf-camp.model.json"
+      },
+      "backendUri": "http://%AEM_SDK%/content/aem-demo/us/en/home/adventure/bali-surf-camp.model.json",
+      "requestOverrides": {
+        "backend.request.headers.Authorization": "%AUTH_TOKEN%"
+      }
+    },
+    "entrypoint": {
+      "matchCondition": {
+        "route": "/asset-manifest.json"
+      },
+      "backendUri": "https://%WEB_APP_URL%/asset-manifest.json",
+      "responseOverrides": {
+        "response.headers.Access-Control-Allow-Origin": "*"
+      }
+    },
+    "react": {
+      "matchCondition": {
+        "route": "/"
+      },
+      "backendUri": "https://%WEB_APP_URL%"
+    },
+    "everything": {
+      "matchCondition": {
+        "route": "/{*path}"
+      },
+      "backendUri": "https://%WEB_APP_URL%/{path}"
+    },
+    "query": {
+      "matchCondition": {
+        "route": "/graphql/execute.json/wknd/adventures-all"
+      },
+      "backendUri": "http://%AEM_SDK%/graphql/execute.json/wknd/adventures-all ",
+      "requestOverrides": {
+        "backend.request.headers.Authorization": "%AUTH_TOKEN%"
+      }
+    },
+    "assets": {
+      "matchCondition": {
+        "route": "/content/dam/{*any}"
+      },
+      "backendUri": "http://%AEM_SDK%/content/dam/{any}",
+      "requestOverrides": {
+        "backend.request.headers.Authorization": "%AUTH_TOKEN%"
+      }
+    },
+    "content": {
+      "matchCondition": {
+        "route": "/content/{*any}"
+      },
+      "backendUri": "http://%AEM_SDK%/content/{any}",
+      "requestOverrides": {
+        "backend.request.headers.Authorization": "%AUTH_TOKEN%"
+      }
+    },
+    "endpoint": {
+      "matchCondition": {
+        "route": "/content/graphql/global/endpoint.json"
+      },
+      "backendUri": "http://%AEM_SDK%/content/graphql/global/endpoint.json",
+      "requestOverrides": {
+        "backend.request.headers.Authorization": "%AUTH_TOKEN%"
+      }
+    },
+    "adventure": {
+      "matchCondition": {
+        "route": "/adventure:/{*any}"
+      },
+      "backendUri": "http://%AEM_SDK%/adventure:{any}",
+      "requestOverrides": {
+        "backend.request.headers.Authorization": "%AUTH_TOKEN%"
+      }
+    },
+    "cache": {
+      "matchCondition": {
+        "route": "/static/js/{*any}"
+      },
+      "backendUri": "https://%WEB_APP_URL%/static/js/{any}",
+      "responseOverrides": {
+        "response.headers.Cache-Control": "max-age=604800"
+      }
+    }
+  }
+}
